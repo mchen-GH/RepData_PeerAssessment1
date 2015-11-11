@@ -61,7 +61,7 @@ fill_na = function(intv, steps) {
 	activity3 = activity[, steps_filled:=mapply(fill_na, interval, steps)]
 ```
 ### 4.1 Make a histogram of the total number of steps taken each day. 
-```{r histogram2,fig.height=4,fig.width=12}
+```{r histogram2,fig.height=6,fig.width=12}
     steps_by_date3 = activity3[,list(steps=sum(steps_filled)),by=date]
 	par(mfrow=c(1,2))
 	hist(steps_by_date3$steps,breaks=25,
